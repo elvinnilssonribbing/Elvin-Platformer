@@ -6,6 +6,11 @@ using UnityEngine;
 
 public class playerMovement : MonoBehaviour
 {
+
+    // Dubbelhoppet är en funktion i mitt spel, men jag tänkte att den inte 
+    // behövde ligga i ett separat skript eftersom den har med spelarensrörelse att göra.
+
+
     // Spelarens hastighet "moveSpeed" sätts till 10, men range-grejen och att den är public
     // gör att vi kan dra i en slider både innan och medans vi spelar spelet för att höja och sänka spelarens hastighet till allt mellan 0 och 20.
     [Range(0, 20f)] public float moveSpeed = 10f;
@@ -13,25 +18,18 @@ public class playerMovement : MonoBehaviour
     // Här sätts variabeln för hur högt (eller egentligen hur snabbt) spelaren ska kunna hoppa
     public float jumpHeight = 7f;
 
-    // Här ?
     private Rigidbody2D rbody;
-
-    // Här ?
     public groundcheck groundcheck;
 
     // värdet för hur många extra hopp du får göra i luften
     public int jumpValue = 1;
 
-    // Här ?
-    bool facingleft = false;
-
-    // Detta sker en gång när skriptet körs
+    // Detta sker när spelaren spawnar
     void Start()
     {
-        // Här ?
+        // variabeln rbody sätts till sökningen efter komponenten Rigidbody2D
         rbody = GetComponent<Rigidbody2D>();
-        
-        // Här ?
+        // variabeln groundcheck sätts till sökningen efter komponenten groundcheck
         groundcheck = gameObject.GetComponentInChildren<groundcheck>();
     }
 
@@ -76,10 +74,11 @@ public class playerMovement : MonoBehaviour
             // ...så blir den 0, inte lägre            
             jumpValue = 0;
         }
-
+        
+        // Om jumpValue är över 1...
         if (jumpValue > 1)
         {
-            // ... så blir den 1, inte högre
+            // ...så blir den 1, inte högre
             // Detta förhindrar möjligheten att "stacka upp" på dubbelhopp genom att inte använda dem för att sedan använda flera åt gången.
             jumpValue = 1;
         }

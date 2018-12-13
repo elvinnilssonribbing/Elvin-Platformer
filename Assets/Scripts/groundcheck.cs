@@ -10,14 +10,22 @@ public class groundcheck : MonoBehaviour
     // När objektet (spelaren) nuddar ett annat objekt med Collider2D...
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // ...så adderas touches-variabeln med 1
-        touches++;
+        //...och om objektet inte är en fiende...
+        if (collision.gameObject.tag != "Enemy")
+        {
+            // ...så adderas touches-variabeln med 1
+            touches++;
+        } 
     }
 
     // När objektet (spelaren) slutar att nudda ett annat objekt med Collider2D...
     private void OnTriggerExit2D(Collider2D collision)
     {
-        // ...så subtraheras touches-variabeln med 1
-        touches--;
+        //...och om objektet inte är en fiende...
+        if (collision.gameObject.tag != "Enemy")
+        {
+            // ...så subtraheras touches-variabeln med 1
+            touches--;
+        }
     }
 }

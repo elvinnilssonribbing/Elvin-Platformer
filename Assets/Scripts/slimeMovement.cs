@@ -9,48 +9,59 @@ public class slimeMovement : MonoBehaviour
     private Rigidbody2D rbody;
     public bool isLeft = true;
     public bool isTimerRunning = false;
-
     public float timer;
 
 
     void Start()
     {
+        // Här hämtas slimens Rigidbody
         rbody = GetComponent<Rigidbody2D>();
-
+        // Timern startas
         isTimerRunning = true;
 
+        // När timern når 1 sekund...
         if (timer > 1f)
         {
+            // ...så körs SlimeJump funktionen med flip-boolen satt till false
             SlimeJump(false);
+            // Timern slutar räkna
             isTimerRunning = false;
+            // Timern resettas
             timer = 0;
         }
     }
 
     void Update()
     {
+        // Om timern är tillsagd att räkna...
         if (isTimerRunning == true)
         {
+            // ...så adderas den med 1 per sekund
             timer += Time.deltaTime;
         }
 
+        // När timern når 1 sekund...
         if (timer > 1f)
         {
+            // ...så körs SlimeJump funktionen med flip-boolen satt till true
             SlimeJump(true);
+            // Timern slutar räkna
             isTimerRunning = false;
+            // Timern resettas
             timer = 0;
         }
     }
 
+    // När slAJmen nuddar marken...
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        // ...så körs timern igång och den vänder sig och hoppar, nuddar marken igen osv.
         isTimerRunning = true;
     }    
 
+        // Här skapas funktionen för Slimens hopp, med en bool-parameter (flip) för att kunna välja om den ska vända på sig eller inte.
         void SlimeJump(bool flip)
     {
-        rbody.velocity = new Vector2(-moveSpeed, jumpHeight);
-
         // Om flip-parametern satts till true...
         if (flip == true)
         {

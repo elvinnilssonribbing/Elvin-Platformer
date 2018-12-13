@@ -14,7 +14,7 @@ public class enemyMovement : MonoBehaviour
     // Detta sker en gång när skriptet körs, i detta fallet när spelet startar eftersom fienderna finns där direkt
     void Start()
     {
-        // Här ?
+        // variabeln rbody sätts till sökningen efter komponenten Rigidbody2D
         rbody = GetComponent<Rigidbody2D>();
         // Här körs funktionen som finns längre ner, med flip-boolen satt till falskt eftersom fienden inte ska vända på sig när spelet startar
         Move(false);
