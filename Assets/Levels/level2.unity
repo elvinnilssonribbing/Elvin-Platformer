@@ -751,11 +751,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4182261406721688, guid: 7c55fb0ef88b55d4ea594acde934246b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.92
+      value: 0.13
       objectReference: {fileID: 0}
     - target: {fileID: 4182261406721688, guid: 7c55fb0ef88b55d4ea594acde934246b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.14337265
+      value: 0.52
       objectReference: {fileID: 0}
     - target: {fileID: 4182261406721688, guid: 7c55fb0ef88b55d4ea594acde934246b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -785,6 +785,11 @@ Prefab:
       propertyPath: m_Name
       value: player
       objectReference: {fileID: 0}
+    - target: {fileID: 61805356027947656, guid: 7c55fb0ef88b55d4ea594acde934246b,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: d58cbf76e1d0a9d49b1c6e599e8bf86c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c55fb0ef88b55d4ea594acde934246b, type: 2}
   m_IsPrefabAsset: 0
@@ -3593,7 +3598,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1832952367}
-  totalScore: 0
+  changeScore: 0
+  levelScore: 0
 --- !u!4 &1941565769
 Transform:
   m_ObjectHideFlags: 0
@@ -3840,11 +3846,6 @@ Prefab:
     - target: {fileID: 4723687862401696, guid: 9aa26df38e4c391478ed268b2ed894ad, type: 2}
       propertyPath: m_RootOrder
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114599455576242580, guid: 9aa26df38e4c391478ed268b2ed894ad,
-        type: 2}
-      propertyPath: speed
-      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9aa26df38e4c391478ed268b2ed894ad, type: 2}

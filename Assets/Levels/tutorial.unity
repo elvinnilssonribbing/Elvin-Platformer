@@ -344,6 +344,11 @@ Prefab:
       propertyPath: levelToLoad
       value: level1
       objectReference: {fileID: 0}
+    - target: {fileID: 61062233173294460, guid: 35becacd8f3114f42a0231b406733b93,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35becacd8f3114f42a0231b406733b93, type: 2}
   m_IsPrefabAsset: 0

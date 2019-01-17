@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 50099126925731402}
   m_Layer: 0
   m_Name: elevator
-  m_TagString: Untagged
+  m_TagString: MovingPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d41a7db1143e38e45bb1c94ae4aa9936, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 10
 --- !u!212 &212032409242246020
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -14,8 +14,8 @@ public class groundcheck : MonoBehaviour
         if (collision.gameObject.tag != "Enemy")
         {
             // ...så adderas touches-variabeln med 1
-            touches++;
-        } 
+            touches = 1;
+        }
     }
 
     // När objektet (spelaren) slutar att nudda ett annat objekt med Collider2D...
@@ -25,7 +25,7 @@ public class groundcheck : MonoBehaviour
         if (collision.gameObject.tag != "Enemy")
         {
             // ...så subtraheras touches-variabeln med 1
-            touches--;
+            touches = 0;
         }
     }
 }
